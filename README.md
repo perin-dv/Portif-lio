@@ -4,7 +4,7 @@ Site profissional responsivo, em português, com foco em software, IA, cloud, au
 
 ## Tecnologia
 
-HTML5 e CSS3, sem framework, sem dependências npm e sem JavaScript no navegador. Scripts locais em Node.js. Tipografia DM Sans e Manrope via Google Fonts, com fontes do sistema como fallback. O favicon SVG está embutido no HTML.
+HTML5 e CSS3, sem framework, sem dependências npm e JavaScript leve no navegador para o player de vídeo sob demanda. Scripts locais em Node.js. Tipografia DM Sans e Manrope via Google Fonts, com fontes do sistema como fallback. O favicon SVG está embutido no HTML.
 
 ## Rodar localmente
 
@@ -13,7 +13,7 @@ Pré-requisito: Node.js 18 ou superior com npm.
 ```sh
 git clone https://github.com/perin-dv/Portif-lio.git
 cd Portif-lio
-git switch feat/portfolio-v1
+git switch main
 npm run dev
 ```
 

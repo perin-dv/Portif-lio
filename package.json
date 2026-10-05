@@ -1,0 +1,14 @@
+{
+  "name": "guilherme-perin-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio profissional de Guilherme Perin",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/check.mjs && node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs build"
+  },
+  "engines": { "node": ">=18" }
+}

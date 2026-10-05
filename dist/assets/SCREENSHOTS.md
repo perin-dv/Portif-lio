@@ -15,4 +15,4 @@ Arquivos fornecidos pelo usuário e copiados sem recorte ou alteração de propo
 - `stella-carrinho.png`: Carrinho — itens e resumo de valores
 - `stella-perfil.png`: Perfil — conta e configurações
 
-Duplicatas da garagem e do painel WhatsApp não foram adicionadas. `temnaloja-garagem.png` foi adicionada após confirmação de que a placa é fictícia. Stella: detalhe do produto e pedidos não foram fornecidos neste lote.
+Duplicatas da garagem e do painel WhatsApp não foram adicionadas. `temnaloja-garagem.png` foi adicionada após confirmação de que a placa é fictícia. Stella: detalhe do produto adicionado em `stella-detalhe-produto.png`. A tela de pedidos ainda não foi fornecida. Home e catálogo reenviados são duplicatas das telas já incluídas.

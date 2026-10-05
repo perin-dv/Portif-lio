@@ -33,8 +33,13 @@ O site usa apenas as informações fornecidas. Não inclui métricas, datas de p
 - Não publicar credenciais, IPs, identificadores de contas, URLs internas, logs sensíveis ou dados dos clientes.
 
 ## AI & Generative Media
-- Showreel de 30–60 segundos, como arquivo ou link de vídeo público/incorporável.
-- Seleção de UGC, vídeos com Veo e Kling, trabalhos com ElevenLabs, casamentos, festas de 15 anos, VTs e publicidade.
+- ✅ 5 vídeos recebidos para triagem.
+- ✅ Seleção principal recomendada para showreel: anúncio de miniatura/café; campanha de viagem/produto com personagem masculino; UGC em parque; campanha de mochila/produto com personagem feminina.
+- ✅ Material complementar recomendado: vídeo longo em 16:9 com apresentadora virtual para demonstrar conteúdo educacional/long-form.
+- Priorizar cortes curtos de 3–8 segundos por trabalho no showreel final.
+- Showreel alvo: 30–60 segundos.
+- Ainda é desejável adicionar 1 casamento/evento forte e 1 VT/comercial para equilibrar o portfólio audiovisual.
+- Ferramentas gerais do portfólio: Veo, Kling, ElevenLabs, CapCut/Premiere e fluxos de geração/edição com IA; não atribuir ferramenta específica a um vídeo sem confirmação.
 - Para cada amostra: título, breve contexto, sua participação e ferramentas efetivamente utilizadas.
 - Confirmar autorização de uso da imagem, música, marca e materiais de terceiros.
 

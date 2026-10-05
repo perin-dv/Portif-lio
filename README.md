@@ -1,65 +1,92 @@
 # Guilherme Perin — Portfólio
 
-Site profissional responsivo, em português, com foco em software, IA, cloud, automação e produção audiovisual. Inclui TakeDream, TemNaLoja, Stella, AmazonClip, AI & Generative Media, Sobre, competências, formação e contato.
+Portfólio profissional de **Guilherme Perin**, reunindo projetos de software, IA, cloud, automação e produção audiovisual.
 
-## Tecnologia
+**Site publicado:** https://guilherme-perin.vercel.app
 
-HTML5 e CSS3, sem framework, sem dependências npm e JavaScript leve no navegador para o player de vídeo sob demanda. Scripts locais em Node.js. Tipografia DM Sans e Manrope via Google Fonts, com fontes do sistema como fallback. O favicon SVG está embutido no HTML.
+## Conteúdo
+
+O portfólio apresenta cases e trabalhos reais, incluindo:
+
+- **TakeDream** — aplicação desktop de edição assistida, transcrição, análise de silêncios, revisão em timeline e exportação.
+- **TemNaLoja** — app Android, backend, painel administrativo, WhatsApp oficial e pagamentos.
+- **Stella** — experiência mobile para restaurante, catálogo, produto, carrinho e fluxo de pedidos.
+- **AmazonClip** — case técnico de infraestrutura, Linux, AWS/Contabo, worker e pipeline de transcrição.
+- **AI & Generative Media** — trabalhos reais de UGC com IA, publicidade, vídeo generativo e apresentador virtual.
+
+A versão atual também inclui galerias reais dos projetos, vídeos otimizados com reprodução sob demanda e os dois currículos profissionais para download.
+
+## Stack do site
+
+- HTML5
+- CSS3
+- JavaScript leve no navegador
+- Node.js para scripts locais de validação, build e preview
+- Deploy contínuo pela Vercel a partir da branch `main`
 
 ## Rodar localmente
 
-Pré-requisito: Node.js 18 ou superior com npm.
+Pré-requisito: **Node.js 18+**.
 
-```sh
+```bash
 git clone https://github.com/perin-dv/Portif-lio.git
 cd Portif-lio
-git switch main
 npm run dev
 ```
 
-Abra http://127.0.0.1:4173. Não é necessário instalar dependências. Para outra porta, configure a variável de ambiente PORT antes de iniciar.
+Servidor local padrão:
 
-## Verificação e build
+```text
+http://127.0.0.1:4173
+```
 
-```sh
+## Validar e gerar build
+
+```bash
 npm run check
 npm run build
 npm run preview
 ```
 
-O build verifica o conteúdo e copia o site estático de `dist/` para `build/`. A prévia serve `build/` na mesma porta. Encerre o servidor anterior antes de abrir outro.
+O comando `npm run build` executa as validações do projeto e gera a versão pronta para publicação.
 
-## Estrutura
+## Estrutura principal
 
-- `dist/index.html`: código-fonte da página, textos, links e placeholders.
-- `dist/style.css`: estilos e comportamento responsivo.
-- `dist/assets/`: diretório reservado às mídias autorizadas, ainda não fornecidas.
-- `scripts/`: servidor local, verificação e build.
-- `.openai/hosting.json`: identificação do site existente e configuração estática do Sites; não contém credenciais.
-- `CHECKLIST.md`: materiais pendentes e cuidados com dados de clientes.
+```text
+dist/
+├── index.html
+├── style.css
+└── assets/
+    ├── screenshots dos projetos
+    ├── vídeos e thumbnails otimizados
+    └── currículos em PDF
 
-`dist/` é a fonte editável do site atual, não um resultado gerado. `build/` é a saída gerada e não é versionada. Todos os placeholders são preservados, sem simular demos ou downloads disponíveis.
+scripts/
+├── check.mjs
+├── build.mjs
+└── serve.mjs
+```
 
-## Editar e adicionar provas visuais
+## Mídia e performance
 
-Edite os dois arquivos em `dist/`. Coloque screenshots, vídeos ou APKs autorizados em `dist/assets/` e substitua o respectivo placeholder por imagem, vídeo ou link real. Para arquivos grandes, prefira hospedagem apropriada e links confirmados. Não use dados reais de clientes nos exemplos.
+Os screenshots são usados diretamente nas galerias responsivas dos projetos. Os vídeos da seção audiovisual utilizam thumbnails leves e o conteúdo completo é carregado somente quando o visitante escolhe assistir, reduzindo o peso inicial da página.
 
-## Publicação
+## Projetos relacionados
 
-**A versão atual deve permanecer privada até a revisão final.** Não há GitHub Actions, publicação automática nem GitHub Pages habilitado por este projeto. Exportar código ao GitHub não altera o acesso ao site.
+- [TakeDream](https://github.com/perin-dv/TakeDream)
+- [Stella Cliente](https://github.com/perin-dv/Stella-Cliente)
+- [Stella Empresa](https://github.com/perin-dv/Stella-Empresa)
+- [GerenteMarketing](https://github.com/perin-dv/GerenteMarketing)
 
-No Sites, reutilize o projeto registrado em `.openai/hosting.json` e solicite publicação privada após a revisão das alterações. O Sites usa `dist/` diretamente e não exige build. A mudança de público deve ser feita separadamente, somente após autorização.
+O case **TemNaLoja** aparece no portfólio, mas o código principal permanece privado.
 
-Para continuar em outra hospedagem estática, execute `npm run build` e use `build/` como diretório publicado. O comando de build é `npm run build`. Nenhuma credencial, conta de hospedagem ou automação externa está configurada. Antes de publicar fora do Sites, confirme o acesso desejado e retire o identificador do Sites de qualquer novo projeto independente.
+## Contato
 
-## Conteúdo e limitações
+- **Portfólio:** https://guilherme-perin.vercel.app
+- **LinkedIn:** https://www.linkedin.com/in/guilherme-perin-580322272
+- **GitHub:** https://github.com/perin-dv
+- **Email:** perin_gui_@hotmail.com
 
-- Formação: Gestão de Comércio concluída; Engenharia de Computação cursando desde 2026.
-- GitHub: https://github.com/perin-dv
-- LinkedIn: https://www.linkedin.com/in/guilherme-perin-580322272
-- Contato: perin_gui_@hotmail.com
-- Não há preços, resultados quantitativos, depoimentos ou datas de projeto inventados.
-- A stack de Stella permanece aguardando confirmação.
-- Screenshots, demos, repositórios específicos e APKs permanecem pendentes.
+---
 
-Branch de continuidade: `feat/portfolio-v1`.
+Disponível para oportunidades remotas, colaboração e projetos freelance.

@@ -3,15 +3,17 @@
 O site usa apenas as informações fornecidas. Não inclui métricas, datas de projetos, depoimentos ou níveis de domínio não confirmados. O contato convida a solicitar um orçamento, sem publicar valores.
 
 ## TakeDream
-- 2–4 screenshots da interface (timeline, transcrição e revisão de cortes).
+- ✅ Screenshots recebidos: Home, Projetos, Novo Projeto, Exportações e Revisão da edição.
+- Seleção principal recomendada: Home, Novo Projeto e Revisão da edição.
 - Vídeo demo curto mostrando o fluxo real.
 - Link específico do repositório público, se disponível.
 - Confirmar status atual e resultados que podem ser comprovados.
 
 ## TemNaLoja
-- Screenshots do app e das integrações que podem ser exibidas.
+- ✅ Screenshots recebidos: Home do app, splash, garagem e painel administrativo/WhatsApp.
+- Seleção principal recomendada: Home do app, Garagem e painel administrativo do WhatsApp.
 - Vídeo demonstrando um fluxo completo com dados fictícios.
-- Link do GitHub, se público.
+- Código fonte confirmado em repositório privado; não publicar link direto enquanto permanecer privado.
 - APK de demonstração ou link autorizado de distribuição; informar versão e instruções de instalação.
 
 ## Stella

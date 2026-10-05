@@ -17,19 +17,20 @@ O site usa apenas as informações fornecidas. Não inclui métricas, datas de p
 - APK de demonstração ou link autorizado de distribuição; informar versão e instruções de instalação.
 
 ## Stella
-- Screenshots dos aplicativos cliente e loja/restaurante.
-- Vídeo mostrando as duas experiências.
-- APK cliente e APK loja, com versão e instruções, se a distribuição for permitida.
-- Confirmar tecnologias utilizadas e status atual.
-- Informar se existe repositório público autorizado.
+- ✅ Screenshots recebidos: Home, catálogo/listagem, detalhe do produto, pedidos, perfil e carrinho.
+- Seleção principal recomendada: Home, detalhe do produto, carrinho e pedidos.
+- Vídeo mostrando a experiência, se disponível.
+- APK e stack técnica: confirmar antes de publicar.
 - Confirmar autorização para apresentar o nome do projeto e qualquer material do cliente.
 
 ## AmazonClip
-- Descrição mais específica do problema, sua atuação e resultado comprovável.
-- Diagrama anonimizado de arquitetura e screenshots sem dados privados.
-- Vídeo demo técnico com dados fictícios, se possível.
-- Link público de código ou documentação, somente se autorizado.
-- Não enviar credenciais, IPs privados, identificadores de contas, URLs internas, logs sensíveis ou dados dos clientes.
+- ✅ Case técnico revisado com problema, atuação e resultado comprováveis.
+- ✅ Migração e estabilização do worker de transcrição entre AWS e Contabo documentadas de forma anonimizada.
+- ✅ Tecnologias incluídas: AWS, S3, Contabo, Linux, SSH, systemd, PHP, Python, Whisper, FFmpeg e GitHub Actions.
+- ✅ Resultado incluído: worker estabilizado, jobs reais concluídos, recuperação de 20 jobs travados e benchmark de 60 s de áudio em aproximadamente 8,7 s.
+- ✅ Fluxo técnico anonimizado incluído no site: AWS S3 → Worker Linux → FFmpeg → Whisper → Aplicação.
+- Opcional: adicionar diagrama visual ou screenshot anonimizado sem dados privados.
+- Não publicar credenciais, IPs, identificadores de contas, URLs internas, logs sensíveis ou dados dos clientes.
 
 ## AI & Generative Media
 - Showreel de 30–60 segundos, como arquivo ou link de vídeo público/incorporável.

@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = new URL('../dist/', import.meta.url);
 const html = readFileSync(new URL('index.html', root), 'utf8');
+const normalized = html.toLocaleLowerCase('pt-BR');
 
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 if (new Set(ids).size !== ids.length) throw new Error('IDs duplicados.');
@@ -17,22 +18,22 @@ for (const match of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
 }
 
 const required = [
-  'TakeDream',
-  'TemNaLoja',
-  'Stella',
-  'AmazonClip',
-  'PerinJobs',
-  'Transformando ideias em',
-  'Desenvolvimento • IA • Cloud • Automação',
-  'Histórias que merecem ser revividas.',
-  'Tem uma ideia?'
+  'takedream',
+  'temnaloja',
+  'stella',
+  'amazonclip',
+  'perinjobs',
+  'transformando ideias em',
+  'desenvolvimento • ia • cloud • automação',
+  'histórias que merecem ser revividas.',
+  'tem uma ideia?'
 ];
 
 for (const text of required) {
-  if (!html.includes(text)) throw new Error(`Texto ausente: ${text}`);
+  if (!normalized.includes(text)) throw new Error(`Texto ausente: ${text}`);
 }
 
-if (/R\$\s*4|Projetos a partir de/.test(html)) {
+if (/R\$\s*4|Projetos a partir de/i.test(html)) {
   throw new Error('Valor comercial antigo ainda presente.');
 }
 

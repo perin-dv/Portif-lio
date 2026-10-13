@@ -1,26 +1,60 @@
 const dialog=document.getElementById('media-player-dialog');
 const player=document.getElementById('media-player');
 const heading=document.getElementById('media-player-title');
+const fallback=document.getElementById('media-player-fallback');
 
-if(dialog&&typeof dialog.showModal==='function'){
-  document.querySelectorAll('.media-watch').forEach(link=>{
-    link.addEventListener('click',event=>{
-      if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
-      event.preventDefault();
-      heading.textContent=link.dataset.title||'Trabalho audiovisual';
-      player.poster=link.dataset.poster||'';
-      player.src=link.dataset.video||link.getAttribute('href');
-      dialog.showModal();
-    });
+document.querySelectorAll('.media-watch').forEach(link=>{
+  link.addEventListener('click',event=>{
+    if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+    const videoUrl=link.dataset.video||link.getAttribute('href');
+    if(!videoUrl)return;
+
+    if(!dialog||!player||typeof dialog.showModal!=='function'){
+      return;
+    }
+
+    event.preventDefault();
+    heading.textContent=link.dataset.title||'Trabalho audiovisual';
+    player.poster=link.dataset.poster||'';
+    player.src=videoUrl;
+    player.load();
+
+    if(fallback){
+      fallback.href=videoUrl;
+      fallback.hidden=true;
+    }
+
+    if(!dialog.open) dialog.showModal();
+
+    const attempt=player.play();
+    if(attempt&&typeof attempt.catch==='function'){
+      attempt.catch(()=>{});
+    }
   });
-  const close=()=>dialog.close();
+});
+
+if(dialog&&player){
+  const close=()=>{
+    if(dialog.open) dialog.close();
+  };
+
   dialog.querySelector('.media-close')?.addEventListener('click',close);
+
+  player.addEventListener('error',()=>{
+    if(fallback) fallback.hidden=false;
+  });
+
   dialog.addEventListener('close',()=>{
     player.pause();
     player.removeAttribute('src');
     player.removeAttribute('poster');
     player.load();
+    if(fallback){
+      fallback.hidden=true;
+      fallback.removeAttribute('href');
+    }
   });
+
   dialog.addEventListener('click',event=>{
     if(event.target!==dialog)return;
     const b=dialog.getBoundingClientRect();

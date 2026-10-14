@@ -86,3 +86,25 @@ footer{display:flex;justify-content:space-between;gap:20px;padding-top:28px;padd
 .wedding-04::before{background:radial-gradient(circle at 74% 18%,rgba(190,128,100,.22),transparent 34%),linear-gradient(145deg,#21130f,#0b0908 55%,#030303)}
 .wedding-05::before{background:radial-gradient(circle at 24% 20%,rgba(164,118,92,.2),transparent 35%),linear-gradient(150deg,#1c120f,#090807 57%,#030303)}
 .wedding-06::before{background:radial-gradient(circle at 68% 22%,rgba(204,145,102,.2),transparent 34%),linear-gradient(145deg,#20150f,#090807 56%,#030303)}
+
+
+/* Galeria de eventos: imagens extraídas dos vídeos, com player sob demanda. */
+.wedding-card.with-video{padding:0;background:#0b0a09!important;transition:border-color .25s,transform .25s}
+.wedding-card.with-video::before,.wedding-card.with-video::after{display:none}
+.wedding-card.with-video:hover,.wedding-card.with-video:focus-within{border-color:#b18c68;transform:translateY(-2px)}
+.wedding-watch{position:absolute;inset:0;display:block;color:inherit;text-decoration:none;overflow:hidden;border-radius:inherit}
+.wedding-watch:focus-visible,.wedding-alt-watch:focus-visible{outline:3px solid #e4b986;outline-offset:-4px}
+.wedding-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;filter:saturate(.92)}
+.wedding-card:hover .wedding-poster{transform:scale(1.04)}
+.wedding-watch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,transparent 30%,rgba(0,0,0,.18) 48%,rgba(0,0,0,.84) 100%);z-index:1;pointer-events:none}
+.wedding-card.with-video .wedding-card-copy{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;display:block;pointer-events:none}
+.wedding-card .wedding-name{display:block;margin:7px 0;font:400 clamp(25px,2.7vw,34px) Georgia,serif;color:#f4e9df}
+.wedding-card .wedding-description{display:block;color:#dbcec3;font-size:12px;line-height:1.45}
+.wedding-card.with-video .wedding-card-copy small{color:#e7c09b}
+.wedding-watch-label{position:absolute;top:18px;left:20px;z-index:2;border:1px solid #e0b98980;background:#0b0909bb;color:white;border-radius:999px;padding:8px 13px;font-size:12px}
+.wedding-watch-label b{margin-left:5px;color:#e0b989}
+.wedding-count{position:absolute;right:20px;bottom:17px;z-index:2;color:#ffffff45;font:400 30px Georgia,serif;pointer-events:none}
+.wedding-alt-watch{position:absolute;z-index:4;right:16px;top:18px;color:#fff;border:1px solid #e0b98980;background:#0b0909dd;border-radius:999px;padding:8px 13px;text-decoration:none;font-size:12px}
+.wedding-alt-watch:hover{background:#533b2b}
+@media(max-width:480px){.wedding-watch-label,.wedding-alt-watch{padding:7px 11px;font-size:11px}.wedding-card .wedding-name{font-size:29px}}
+@media(prefers-reduced-motion:reduce){.wedding-poster,.wedding-card.with-video{transition:none!important}}

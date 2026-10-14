@@ -8,3 +8,7 @@ build/
 *.log
 Thumbs.db
 .DS_Store
+
+# Keep poster-selection contact frames and in-progress encodes out of published assets
+dist/assets/media/_review_poster_frames/
+dist/assets/media/*.encoding.mp4

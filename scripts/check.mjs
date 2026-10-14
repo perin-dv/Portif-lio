@@ -43,7 +43,7 @@ if (weddingLinks.length !== 6) throw new Error('A galeria precisa de seis cards 
 const eventVideos = [...new Set([...weddingLinks.map(m => m[1]), 'assets/media/julia-ayalla-trailer.mp4'])];
 if (eventVideos.length !== 7) throw new Error('Esperados sete vídeos distintos para seis cards.');
 for (const videoPath of eventVideos) {
-  const posterPath = videoPath.replace(/\\.mp4$/, '.webp');
+  const posterPath = videoPath.replace(/\.mp4$/, '.webp');
   if (!existsSync(fileURLToPath(new URL(videoPath, root)))) throw new Error('Vídeo de evento ausente: ' + videoPath);
   if (!existsSync(fileURLToPath(new URL(posterPath, root)))) throw new Error('Capa de evento ausente: ' + posterPath);
 }

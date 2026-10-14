@@ -68,3 +68,21 @@ footer{display:flex;justify-content:space-between;gap:20px;padding-top:28px;padd
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}[data-reveal]{opacity:1;transform:none;transition:none}.wedding-card:before,.media-poster img,.button,.service-grid article{transition:none!important}}
 
 .brand-photo{overflow:hidden;padding:0;border-radius:50%;background:#08101c;box-shadow:0 0 0 1px #7aa2ff55,0 0 22px #667cff33}.brand-photo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+
+.media-video-preview{position:relative;overflow:hidden;background:#0a0b0f}
+.media-video-preview video{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:9/16;filter:saturate(.88) contrast(1.03);background:#0a0b0f}
+.wedding-card{position:relative;isolation:isolate;overflow:hidden;min-height:270px;background:#0b0a09!important}
+.wedding-card::before{content:"";position:absolute;inset:0;z-index:-2;background:
+ radial-gradient(circle at 18% 18%,rgba(222,163,105,.22),transparent 34%),
+ radial-gradient(circle at 82% 28%,rgba(124,88,64,.18),transparent 36%),
+ linear-gradient(145deg,#21160f 0%,#0d0b0a 48%,#050505 100%);transform:scale(1.02)}
+.wedding-card::after{content:"";position:absolute;inset:0;z-index:-1;background:
+ linear-gradient(180deg,rgba(0,0,0,.04) 0%,rgba(0,0,0,.18) 42%,rgba(0,0,0,.88) 100%),
+ repeating-linear-gradient(90deg,rgba(255,255,255,.015) 0 1px,transparent 1px 5px)}
+.wedding-card-copy{margin-top:auto;position:relative;z-index:2}
+.wedding-card>span{position:absolute!important;top:22px;right:24px;opacity:.18!important}
+.wedding-02::before{background:radial-gradient(circle at 72% 22%,rgba(182,140,101,.22),transparent 34%),linear-gradient(145deg,#1b1512,#090807 58%,#030303)}
+.wedding-03::before{background:radial-gradient(circle at 30% 20%,rgba(130,105,84,.2),transparent 36%),linear-gradient(160deg,#19130f,#090807 56%,#030303)}
+.wedding-04::before{background:radial-gradient(circle at 74% 18%,rgba(190,128,100,.22),transparent 34%),linear-gradient(145deg,#21130f,#0b0908 55%,#030303)}
+.wedding-05::before{background:radial-gradient(circle at 24% 20%,rgba(164,118,92,.2),transparent 35%),linear-gradient(150deg,#1c120f,#090807 57%,#030303)}
+.wedding-06::before{background:radial-gradient(circle at 68% 22%,rgba(204,145,102,.2),transparent 34%),linear-gradient(145deg,#20150f,#090807 56%,#030303)}

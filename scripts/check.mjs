@@ -37,4 +37,15 @@ if (/R\$\s*4|Projetos a partir de/i.test(html)) {
   throw new Error('Valor comercial antigo ainda presente.');
 }
 
+
+const weddingLinks = [...html.matchAll(/class="wedding-watch media-watch"[^>]*data-video="([^"]+)"[^>]*data-poster="([^"]+)"/g)];
+if (weddingLinks.length !== 6) throw new Error('A galeria precisa de seis cards com vídeos reais.');
+const eventVideos = [...new Set([...weddingLinks.map(m => m[1]), 'assets/media/julia-ayalla-trailer.mp4'])];
+if (eventVideos.length !== 7) throw new Error('Esperados sete vídeos distintos para seis cards.');
+for (const videoPath of eventVideos) {
+  const posterPath = videoPath.replace(/\\.mp4$/, '.webp');
+  if (!existsSync(fileURLToPath(new URL(videoPath, root)))) throw new Error('Vídeo de evento ausente: ' + videoPath);
+  if (!existsSync(fileURLToPath(new URL(posterPath, root)))) throw new Error('Capa de evento ausente: ' + posterPath);
+}
+
 console.log('Conteúdo, CTA, navegação, cases e referências locais verificados.');

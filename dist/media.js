@@ -1,59 +1,81 @@
 const dialog=document.getElementById('media-player-dialog');
 const player=document.getElementById('media-player');
+const embed=document.getElementById('media-embed');
 const heading=document.getElementById('media-player-title');
 const fallback=document.getElementById('media-player-fallback');
+
+const resetMedia=()=>{
+  if(player){
+    player.pause();
+    player.removeAttribute('src');
+    player.removeAttribute('poster');
+    player.hidden=false;
+    player.load();
+  }
+  if(embed){
+    embed.removeAttribute('src');
+    embed.hidden=true;
+  }
+  if(fallback){
+    fallback.hidden=true;
+    fallback.removeAttribute('href');
+  }
+};
 
 document.querySelectorAll('.media-watch').forEach(link=>{
   link.addEventListener('click',event=>{
     if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
-    const videoUrl=link.dataset.video||link.getAttribute('href');
-    if(!videoUrl)return;
 
-    if(!dialog||!player||typeof dialog.showModal!=='function'){
+    const videoUrl=link.dataset.video||'';
+    const embedUrl=link.dataset.embed||'';
+    const externalUrl=link.getAttribute('href');
+
+    if(!dialog||typeof dialog.showModal!=='function'){
       return;
     }
 
     event.preventDefault();
-    heading.textContent=link.dataset.title||'Trabalho audiovisual';
-    player.poster=link.dataset.poster||'';
-    player.src=videoUrl;
-    player.load();
+    resetMedia();
 
-    if(fallback){
-      fallback.href=videoUrl;
-      fallback.hidden=true;
+    if(heading) heading.textContent=link.dataset.title||'Trabalho audiovisual';
+
+    if(fallback&&externalUrl){
+      fallback.href=externalUrl;
+      fallback.hidden=false;
+    }
+
+    if(embedUrl&&embed){
+      if(player) player.hidden=true;
+      embed.hidden=false;
+      embed.src=embedUrl;
+    }else if(videoUrl&&player){
+      player.hidden=false;
+      player.poster=link.dataset.poster||'';
+      player.src=videoUrl;
+      player.load();
+      const attempt=player.play();
+      if(attempt&&typeof attempt.catch==='function') attempt.catch(()=>{});
+    }else if(externalUrl){
+      window.open(externalUrl,'_blank','noopener');
+      return;
     }
 
     if(!dialog.open) dialog.showModal();
-
-    const attempt=player.play();
-    if(attempt&&typeof attempt.catch==='function'){
-      attempt.catch(()=>{});
-    }
   });
 });
 
-if(dialog&&player){
+if(dialog){
   const close=()=>{
     if(dialog.open) dialog.close();
   };
 
   dialog.querySelector('.media-close')?.addEventListener('click',close);
 
-  player.addEventListener('error',()=>{
+  player?.addEventListener('error',()=>{
     if(fallback) fallback.hidden=false;
   });
 
-  dialog.addEventListener('close',()=>{
-    player.pause();
-    player.removeAttribute('src');
-    player.removeAttribute('poster');
-    player.load();
-    if(fallback){
-      fallback.hidden=true;
-      fallback.removeAttribute('href');
-    }
-  });
+  dialog.addEventListener('close',resetMedia);
 
   dialog.addEventListener('click',event=>{
     if(event.target!==dialog)return;

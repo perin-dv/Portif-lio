@@ -86,3 +86,34 @@ footer{display:flex;justify-content:space-between;gap:20px;padding-top:28px;padd
 .wedding-04::before{background:radial-gradient(circle at 74% 18%,rgba(190,128,100,.22),transparent 34%),linear-gradient(145deg,#21130f,#0b0908 55%,#030303)}
 .wedding-05::before{background:radial-gradient(circle at 24% 20%,rgba(164,118,92,.2),transparent 35%),linear-gradient(150deg,#1c120f,#090807 57%,#030303)}
 .wedding-06::before{background:radial-gradient(circle at 68% 22%,rgba(204,145,102,.2),transparent 34%),linear-gradient(145deg,#20150f,#090807 56%,#030303)}
+
+/* Wedding / event showcase with real media */
+.wedding-showcase{grid-template-columns:repeat(12,1fr);gap:14px}
+.wedding-piece{grid-column:span 4;border:1px solid #3a2c23;border-radius:20px;background:linear-gradient(180deg,#14100d,#080706);overflow:hidden;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.wedding-piece:hover{transform:translateY(-4px);border-color:#755b46;box-shadow:0 22px 50px #0006}
+.wedding-piece-hero,.wedding-piece-wide{grid-column:span 8}
+.wedding-watch{display:block;color:inherit}
+.wedding-visual{position:relative;aspect-ratio:16/10;overflow:hidden;background:#100d0b}
+.wedding-piece-hero .wedding-visual,.wedding-piece-wide .wedding-visual{aspect-ratio:16/8}
+.wedding-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,#050302d9)}
+.wedding-visual img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9) contrast(1.03);transition:transform .7s ease,filter .5s ease}
+.wedding-piece:hover .wedding-visual img{transform:scale(1.035);filter:saturate(1) contrast(1.05)}
+.wedding-play{position:absolute;z-index:2;left:18px;bottom:16px;display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border:1px solid #d4b08c66;border-radius:999px;background:#0a0706c7;backdrop-filter:blur(10px);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#f5e8da}
+.wedding-play b{font-size:15px;color:#d6af86}
+.wedding-meta{padding:20px 22px 23px}
+.wedding-meta small{font-size:9px;letter-spacing:.14em;color:#a98869}
+.wedding-meta h3{font:400 28px Georgia,serif;color:#f0e5da;margin:7px 0 8px}
+.wedding-meta p{margin:0;color:#998476;font-size:12px;line-height:1.6}
+#media-embed{width:100%;height:min(72dvh,720px);border:0;border-radius:12px;background:#000}
+.media-player-fallback{display:inline-block;margin-top:10px;color:#9db8ff;font-size:11px;border-bottom:1px solid #5572aa;padding-bottom:2px}
+@media(max-width:1100px){
+  .wedding-showcase{grid-template-columns:repeat(2,1fr)}
+  .wedding-piece,.wedding-piece-hero,.wedding-piece-wide{grid-column:span 1}
+  .wedding-piece-hero{grid-column:span 2}
+}
+@media(max-width:760px){
+  .wedding-showcase{grid-template-columns:1fr}
+  .wedding-piece,.wedding-piece-hero,.wedding-piece-wide{grid-column:1}
+  .wedding-visual,.wedding-piece-hero .wedding-visual,.wedding-piece-wide .wedding-visual{aspect-ratio:16/10}
+  #media-embed{height:62dvh}
+}

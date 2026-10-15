@@ -117,3 +117,27 @@ footer{display:flex;justify-content:space-between;gap:20px;padding-top:28px;padd
   .wedding-visual,.wedding-piece-hero .wedding-visual,.wedding-piece-wide .wedding-visual{aspect-ratio:16/10}
   #media-embed{height:62dvh}
 }
+
+
+/* Real project screenshots: TemNaLoja + PerinJobs */
+.temnaloja-gallery{overflow:hidden}
+.temnaloja-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,42%);gap:12px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;padding:2px 2px 12px;scrollbar-width:thin;scrollbar-color:#35506e #0a111b}
+.temnaloja-strip::-webkit-scrollbar{height:7px}.temnaloja-strip::-webkit-scrollbar-track{background:#0a111b;border-radius:999px}.temnaloja-strip::-webkit-scrollbar-thumb{background:#35506e;border-radius:999px}
+.temnaloja-screen{scroll-snap-align:start;min-width:0}.temnaloja-screen a{display:flex;align-items:center;justify-content:center;aspect-ratio:9/19.5;background:#f5f7fb}.temnaloja-screen img{width:100%;height:100%;object-fit:contain;background:#f5f7fb}
+.temnaloja-screen figcaption{padding-bottom:5px}.temnaloja-admin-shot{margin-top:14px}.temnaloja-admin-shot a{background:#08101b}.temnaloja-admin-shot img{width:100%;max-height:260px;object-fit:contain;object-position:top;background:#08101b}
+
+.perinjobs-gallery{padding:30px;min-width:0;border-left:1px solid #21304a;background:radial-gradient(circle at 80% 8%,#2f7d7a24,transparent 36%),#080d15}
+.perinjobs-gallery .gallery-label{margin-bottom:16px}.perinjobs-hero-shot img,.perinjobs-thumbs img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;background:#070c14}
+.perinjobs-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}.perinjobs-thumbs .shot figcaption{padding-bottom:0}
+
+@media(max-width:1100px){
+  .perinjobs-gallery{border-left:0;border-top:1px solid #21304a}
+  .temnaloja-strip{grid-auto-columns:minmax(180px,32%)}
+}
+@media(max-width:760px){
+  .temnaloja-strip{grid-auto-columns:minmax(156px,58%)}
+  .temnaloja-screen a{aspect-ratio:9/19.5}
+  .temnaloja-admin-shot img{max-height:220px}
+  .perinjobs-gallery{padding:18px}
+  .perinjobs-thumbs{grid-template-columns:1fr}
+}
